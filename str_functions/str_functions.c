@@ -33,31 +33,31 @@ char* my_strstr(const char* str1, const char* str2)
 }
 int main()
 {
-    char arr1[] = "abbbcddfg";
-    char arr2[] = "bcd1";
-    char* ret = my_strstr(arr1, arr2);  //Èç¹ûÕÒµ½ÁË»á·µ»Ø×Ö´®ÔÚ²éÕÒ´®ÖĞÊ×ÔªËØµÄµØÖ·£¬ÕÒ²»µ½Ôò·µ»Ø¿Õ´®£¬¼´NULL
+    char arr1[] = "www.huawei.com";
+    char arr2[] = "huawei";
+    char* ret = my_strstr(arr1, arr2);  //å¦‚æœæ‰¾åˆ°äº†ä¼šè¿”å›å­—ä¸²åœ¨æŸ¥æ‰¾ä¸²ä¸­é¦–å…ƒç´ çš„åœ°å€ï¼Œæ‰¾ä¸åˆ°åˆ™è¿”å›ç©ºä¸²ï¼Œå³NULL
     if (ret == NULL)
     {
-        printf("×Ö´®²»´æÔÚ\n");
+        printf("å­—ä¸²ä¸å­˜åœ¨\n");
     }
     else
     {
-        printf("%s", ret);  //´òÓ¡huawei.com  ÒòÎªÕÒµ½µØÖ·ºó´òÓ¡»áÒ»Ö±´òÓ¡µ½\0
+        printf("%s", ret);  //æ‰“å°huawei.com  å› ä¸ºæ‰¾åˆ°åœ°å€åæ‰“å°ä¼šä¸€ç›´æ‰“å°åˆ°\0
     }
     return 0;
 }
 
 
 //strcat
-//×Ö·û´®×·¼Ó
-//Ô´×Ö·û´®±ØĞëÒÔ\0½áÎ²
-//Ä¿±ê¿Õ¼ä±ØĞëÓĞ×ã¹»´óµÄ¿Õ¼ä£¬ÄÜÈİÏÂÔ´×Ö·û´®µÄÄÚÈİ
-//Ä¿±ê¿Õ¼ä±ØĞë¿ÉĞŞ¸Ä
+//å­—ç¬¦ä¸²è¿½åŠ 
+//æºå­—ç¬¦ä¸²å¿…é¡»ä»¥\0ç»“å°¾
+//ç›®æ ‡ç©ºé—´å¿…é¡»æœ‰è¶³å¤Ÿå¤§çš„ç©ºé—´ï¼Œèƒ½å®¹ä¸‹æºå­—ç¬¦ä¸²çš„å†…å®¹
+//ç›®æ ‡ç©ºé—´å¿…é¡»å¯ä¿®æ”¹
 int main()
 {
     char arr[20] = "hello ";
     strcat(arr, "world");
-    printf("%s", arr);  //´òÓ¡hello world
+    printf("%s", arr);  //æ‰“å°hello world
     return 0;
 }
 #include <assert.h>
@@ -65,12 +65,12 @@ char* my_strcat(char* dest, const char* sourse)
 {
     assert(dest && sourse);
     char* ret = dest;
-    //ÏÈÕÒµ½Ä¿±ê×Ö·û´®µÄ½áÎ²
+    //å…ˆæ‰¾åˆ°ç›®æ ‡å­—ç¬¦ä¸²çš„ç»“å°¾
     while (*dest != '\0')
     {
         dest++;
     }
-    //ÕÒµ½ºó¿½±´¹ıÈ¥
+    //æ‰¾åˆ°åæ‹·è´è¿‡å»
     while (*dest++ = *sourse++)
     {
         ;
@@ -82,15 +82,15 @@ int main()
 {
     char arr[20] = "hello ";
     my_strcat(arr, "world");
-    //²»¿ÉÒÔ×Ô¼º¸ø×Ô¼º×·¼Ó£¬ÒòÎªºóÃæ×·¼ÓµÄ»á°ÑÄ¿±ê×Ö·û´®½áÎ²µÄ\0¸²¸Ç£¬µ¼ÖÂËÀÑ­»·
-    printf("%s", arr);  //´òÓ¡hello world
+    //ä¸å¯ä»¥è‡ªå·±ç»™è‡ªå·±è¿½åŠ ï¼Œå› ä¸ºåé¢è¿½åŠ çš„ä¼šæŠŠç›®æ ‡å­—ç¬¦ä¸²ç»“å°¾çš„\0è¦†ç›–ï¼Œå¯¼è‡´æ­»å¾ªç¯
+    printf("%s", arr);  //æ‰“å°hello world
     return 0;
 }
 
 
 
 //strcmp
-//±È½Ï×Ö·û´®
+//æ¯”è¾ƒå­—ç¬¦ä¸²
 int main()
 {
     char arr1[] = "afdsffas";
@@ -98,7 +98,7 @@ int main()
     int ret = strcmp(arr1, arr2); 
     if (ret != 0)
     {
-        printf("²»µÈÓÚ");
+        printf("ä¸ç­‰äº");
     }
     else
     {
@@ -130,7 +130,7 @@ int main()
     int ret = my_strcmp(arr1, arr2);
     if (ret != 0)
     {
-        printf("²»µÈÓÚ");
+        printf("ä¸ç­‰äº");
     }
     else
     {
