@@ -138,3 +138,53 @@ int main()
     }
     return 0;
 }
+
+
+//strtok 
+//切割字符串
+int main()
+{
+    const char* sep = "@.";     // 将你要分割的所有符号全放sep中
+    char email[] = "asdfs@fahhauis.cfdom";  // 要分割的字符串
+    char ep[30] = { 0 };
+    strcpy(ep, email);  //strtok是一个很怪的函数，它会将你要分割的符号变成\0即上面的 (@ .) 会变成\0这样如果直接对原字符串使用的话，就会改变原字符串，所以一般先将原字符串拷贝到其他数组里
+
+    char* ret = strtok(ep, sep);
+    printf("%s\n", ret);  //asdfs\0fahhauis.cfdom
+
+    ret = strtok(NULL, sep);
+    printf("%s\n", ret);  //asdfs\0 fahhauis\0cfdom
+
+    ret = strtok(NULL, sep);
+    printf("%s\n", ret);  //asdfs\0fahhauis\0 cfdom
+
+    //巧妙运用for循环
+    for (ret = strtok(ep, sep); ret != NULL; ret = strtok(NULL, sep))
+    {
+        printf("%s\n", ret);
+    }
+    return 0;
+}
+
+
+
+                         //strerror
+              //返回错误码，所对应的错误信息
+// C语言的库函数，在执行失败的时候，都会设置错误码
+#include <errno.h>
+int main()
+{
+
+    // errno - C语言设置的一个全局的错误码存放的变量  要引用头文件
+    FILE* pf = fopen("test.c", "r");
+    if (pf == NULL)
+    {
+        printf("%s\n", strerror(errno));
+        return 1;
+    }
+    else
+    {
+
+    }
+    return 0;
+}
