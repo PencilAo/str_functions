@@ -12,8 +12,8 @@ char* my_strstr(const char* str1, const char* str2)
     while (*s1 != *s2)
     {
         s1++;
-    }
-    p = s1;
+    }    
+    p = s1;   //找到第一个和首字母相同的元素的地址
     while (*p)
     {
         s1 = p;
@@ -42,7 +42,7 @@ int main()
     }
     else
     {
-        printf("%s", ret);  //打印huawei.com  因为找到地址后打印会一直打印到\0
+        printf("%s", ret);  //这里会打印出 huawei.com  因为找到地址后打印会一直打印到\0
     }
     return 0;
 }
